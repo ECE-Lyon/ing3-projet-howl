@@ -1,18 +1,20 @@
 public class Movies {
     private String name;
     private String genre;
-    private int duration;
+    private String duration;
     private String releaseDate;
     private int numberOfSeats;
     private int price;
+    private String image;
 
-    public Movies(String name, String genre, int duration, String releaseDate, int numberOfSeats, int price) {
+    public Movies(String name, String genre, String duration, String releaseDate, int numberOfSeats, int price, String image) {
         this.name = name;
         this.genre = genre;
         this.duration = duration;
         this.releaseDate = releaseDate;
         this.numberOfSeats = numberOfSeats;
         this.price = price;
+        this.image = image;
     }
 
     public String getName() {
@@ -31,11 +33,27 @@ public class Movies {
         this.genre = genre;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
@@ -46,6 +64,15 @@ public class Movies {
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public void updateDetails(){
 
     }

@@ -1,26 +1,26 @@
-public class Members extends Customers {
-    private int id;
+import java.util.HashMap;
+
+public class Members  {
     private String username;
     private String password;
-    private enum type{
-        REGULAR,
-        SENIOR,
-        CHILDREN
-    };
+    private String type;
 
-    public Members(int id, String username, String password) {
-        this.id = id;
+    public Members(String username, String password, String type) {
         this.username = username;
         this.password = password;
+        this.type = type;
+
     }
 
-    public int getId() {
-        return id;
+
+    public String getType() {
+        return type;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setType(String type) {
+        this.type = type;
     }
+
 
     public String getUsername() {
         return username;
@@ -38,19 +38,15 @@ public class Members extends Customers {
         this.password = password;
     }
 
+
+
     public void login() {
 
     }
     public void logOut(){
 
     }
-    public void bookTickets(type discounts){
 
-    }
 
-    @Override
-    public void browseMovies(){};
-    public void bookTickets(){};
-    public void makePayement(){};
 
 }

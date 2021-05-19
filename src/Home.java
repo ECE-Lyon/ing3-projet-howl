@@ -48,7 +48,7 @@ public class Home extends JFrame{
         });
 
         /**
-         * Bouton admin : renvoi vers la page de connexion pour les admins
+         * Bouton admin : renvoi vers la page de connexion pour les admins AdminLogin
          */
         AdminButton.addActionListener(new ActionListener() {
             @Override

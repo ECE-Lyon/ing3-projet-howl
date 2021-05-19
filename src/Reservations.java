@@ -1,3 +1,6 @@
+/**
+ * Class pour stocker une réservation
+ */
 public class Reservations {
     private Integer movieId;
     private int amount;

@@ -1,3 +1,6 @@
+/**
+ * Class pour stocker les infos d'un film
+ */
 public class Movies {
     private String name;
     private String genre;
@@ -73,10 +76,6 @@ public class Movies {
         this.image = image;
     }
 
-    public void updateDetails(){
-
-    }
-    public void updateSeats(){}
 
 
 }

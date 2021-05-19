@@ -1,5 +1,8 @@
 import java.util.HashMap;
 
+/**
+ * Class pour stocker les infos d'un utilisateur membre
+ */
 public class Members  {
     private String username;
     private String password;

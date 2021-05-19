@@ -82,7 +82,9 @@ public class Login extends JFrame{
             }
         });
 
-
+        /**
+         * Connexion pour les guests
+         */
         guestButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

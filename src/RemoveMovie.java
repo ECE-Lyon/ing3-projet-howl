@@ -7,56 +7,67 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * Page pour la suppression d'un film
+ */
 public class RemoveMovie extends JFrame implements ActionListener {
 
+    /**
+     * variable où on stocke l'id du film à supprimer
+     */
     static String movieToDelete = "";
 
     public RemoveMovie() {
+
+        /**
+         * Affichage
+         */
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        //this.getContentPane().add(MainPanel);
         this.setLayout(new FlowLayout());
-        //add(new NewImagePanel("movie.jpg"));
-
-
         ButtonGroup movieGroup = new ButtonGroup();
+        /**>*/
 
-
+        /**
+         * Récupération des infos des films dans la BDD
+         */
         try{
             Connection con = DriverManager.getConnection("jdbc:h2:./default");
             Statement stmt = con.createStatement();
             String sql = "select movie_name, image, movie_id from MOVIES";
             ResultSet rs = stmt.executeQuery(sql);
-            //ImageIcon icon = new ImageIcon("movie.jpg");
 
+            /**
+             * Affichage des films
+             */
             while(rs.next()){
-                //System.out.println(rs.getString(1));
                 JRadioButton movie = new JRadioButton(rs.getString(1));
                 movie.setName(rs.getString(3));
                 add(new NewImagePanel(rs.getString(2)));
                 movieGroup.add(movie);
+
+                /**
+                 * Récupération de l'id du film sélectionné
+                 */
                 movie.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         movieToDelete = movie.getName();
-                        System.out.println("t'as cliqué");
-                        System.out.println(movieToDelete);
-
-
                     }
                 });
 
-                this.add(movie);
 
+                this.add(movie);//Ajout du bouton radio du film à la page
 
             }
-
-
 
         }catch (Exception ex){
             JOptionPane.showMessageDialog(null, ex);
 
-
         }
+
+        /**
+         * Bouton supprimer. Envoie la requete à la BDD au clic
+         */
         JButton submit = new JButton("supprimer");
         submit.addActionListener(new ActionListener() {
             @Override
@@ -77,41 +88,22 @@ public class RemoveMovie extends JFrame implements ActionListener {
                 }
             }
         });
-        getContentPane().add(submit);
+        /**>*/
 
+        /**
+         * Affichage
+         */
+        getContentPane().add(submit);
         setSize(500,500);
         setLocationRelativeTo(null);
-        //pack();
         setVisible(true);
+        /**>*/
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
-
-    /*public class NewImagePanel extends JPanel {
-
-        private BufferedImage img;
-
-        public NewImagePanel(String movie) {
-            try {
-                img = ImageIO.read(RemoveMovie.class.getResource("/resources/"+movie));
-            } catch (IOException ex) {
-                System.out.println("Could not load image");
-            }
-        }
-
-        @Override
-        public Dimension getPreferredSize() {
-            return new Dimension(50, 50);
-        }
-
-        @Override
-        protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
-        }
-    }*/
 }
 

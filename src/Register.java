@@ -5,6 +5,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+/**
+ * Page pour l'enregistrement
+ */
 public class Register extends JFrame{
     private JPanel MainPanel;
     private JPanel TopPanel;
@@ -20,7 +23,9 @@ public class Register extends JFrame{
     private JRadioButton childrenRadio;
 
     public Register(){
-
+        /**
+         * Affichage
+         */
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         ButtonGroup group = new ButtonGroup();
@@ -33,7 +38,11 @@ public class Register extends JFrame{
         setSize(500,500);
         setLocationRelativeTo(null);
         setVisible(true);
+        /**>*/
 
+        /**
+         * Enregistrement
+         */
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,7 +57,8 @@ public class Register extends JFrame{
                 String username = usernameField.getText();
                 String password = passwordField.getText();
 
-                Members member = new Members(username,password,type); //Récupération des infos pour la registration dans un objet Members
+                //Récupération des infos pour la registration dans un objet Members
+                Members member = new Members(username,password,type);
 
                 /**
                  * Ajout du nouveau membre dans la BDD

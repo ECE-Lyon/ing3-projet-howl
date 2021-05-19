@@ -4,6 +4,9 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+/**
+ * Class pour afficher une image
+ */
 public class NewImagePanel extends JPanel {
 
     private BufferedImage img;

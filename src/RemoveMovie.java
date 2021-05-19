@@ -10,7 +10,7 @@ import java.sql.*;
 /**
  * Page pour la suppression d'un film
  */
-public class RemoveMovie extends JFrame implements ActionListener {
+public class RemoveMovie extends JFrame  {
 
     /**
      * variable où on stocke l'id du film à supprimer
@@ -101,9 +101,6 @@ public class RemoveMovie extends JFrame implements ActionListener {
 
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
-    }
 }
 

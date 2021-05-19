@@ -63,7 +63,7 @@ public class MovieList extends JFrame {
             while(rs.next()){
                 /*Ajout des éléments sur la page pour chaque film*/
                 JRadioButton movie = new JRadioButton(rs.getString(1));
-                JLabel description = new JLabel(rs.getString(1)+"\n"+rs.getString(4));
+                //JLabel description = new JLabel(rs.getString(1)+"\n"+rs.getString(4));
 
 
                 movie.setName(rs.getString(3));//on enregistre l'id du film dans le nom du bouton radio
